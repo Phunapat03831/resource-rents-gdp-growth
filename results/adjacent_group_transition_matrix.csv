@@ -1,0 +1,10 @@
+from_group,to_group,count
+L,L,962
+L,M,294
+L,H,127
+M,L,319
+M,M,388
+M,H,352
+H,L,114
+H,M,372
+H,H,920

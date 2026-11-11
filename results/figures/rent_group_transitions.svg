@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="430" viewBox="0 0 900 430" role="img" aria-labelledby="title desc">
+<title id="title">Rent group persistence between adjacent years</title>
+<desc id="desc">Among 2,123 adjacent-year observations where both years are in the low or high rent groups, 1,882 or 88.65 percent stay in the same tail and 241 or 11.35 percent switch tails.</desc>
+<rect width="900" height="430" fill="#ffffff"/>
+<text x="450" y="54" text-anchor="middle" font-family="Arial, sans-serif" font-size="27" font-weight="700" fill="#17324d">Rent-group persistence, 2000–2021</text>
+<text x="450" y="91" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" fill="#4b5563">Adjacent complete-year pairs where both years are classified as low or high</text>
+<text x="120" y="158" font-family="Arial, sans-serif" font-size="16" fill="#374151">Same low/high group</text>
+<text x="120" y="216" font-family="Arial, sans-serif" font-size="15" fill="#6b7280">n = 1,882 of 2,123</text>
+<text x="120" y="283" font-family="Arial, sans-serif" font-size="16" fill="#374151">Switched low ↔ high</text>
+<text x="120" y="341" font-family="Arial, sans-serif" font-size="15" fill="#6b7280">n = 241 of 2,123</text>
+<rect x="390" y="133" width="430" height="42" rx="8" fill="#e5e7eb"/>
+<rect x="390" y="133" width="381.2" height="42" rx="8" fill="#2563a6"/>
+<text x="580" y="161" text-anchor="middle" font-family="Arial, sans-serif" font-size="19" font-weight="700" fill="#ffffff">88.65% stayed</text>
+<rect x="390" y="258" width="430" height="42" rx="8" fill="#e5e7eb"/>
+<rect x="390" y="258" width="48.8" height="42" rx="8" fill="#ed8936"/>
+<text x="463" y="286" font-family="Arial, sans-serif" font-size="18" font-weight="700" fill="#a94f08">11.35% switched</text>
+<line x1="390" y1="365" x2="820" y2="365" stroke="#9ca3af" stroke-width="1"/>
+<text x="390" y="392" text-anchor="middle" font-family="Arial, sans-serif" font-size="13" fill="#6b7280">0%</text>
+<text x="605" y="392" text-anchor="middle" font-family="Arial, sans-serif" font-size="13" fill="#6b7280">50%</text>
+<text x="820" y="392" text-anchor="middle" font-family="Arial, sans-serif" font-size="13" fill="#6b7280">100%</text>
+<text x="450" y="418" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="#6b7280">Middle-group observations are excluded from this two-tail persistence percentage.</text>
+</svg>
