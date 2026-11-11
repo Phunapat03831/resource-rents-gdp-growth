@@ -130,6 +130,17 @@ python audit_rents.py
 
 ผลลัพธ์จะอยู่ใน `results/`.
 
+### รันด้วย RStudio
+
+เปิดโฟลเดอร์ repository ใน RStudio แล้วตั้ง working directory เป็นโฟลเดอร์หลักของโครงงาน จากนั้นรัน:
+
+```r
+install.packages(c("readr", "dplyr", "tidyr", "stringr", "ggplot2"))
+source("analysis.R")
+```
+
+ถ้าติดตั้งแพ็กเกจไว้แล้ว ใช้เพียง `source("analysis.R")`. สคริปต์จะพิมพ์จำนวนคู่ ค่าเฉลี่ย ผลต่าง ช่วงความเชื่อมั่น และผล paired t-test กับ Wilcoxon ลงใน Console พร้อมบันทึกตารางที่ `results/r_analysis_summary.csv`, `results/r_country_pairs.csv` และกราฟที่ `results/figures/r_paired_differences.png`.
+
 ### กราฟผลต่าง
 
 จุดหนึ่งจุดคือผลต่างสูง−ต่ำของหนึ่งประเทศ/เขตเศรษฐกิจ จุดเหนือเส้นศูนย์หมายถึงค่าเฉลี่ยการเติบโตช่วง rents สูงมากกว่า เส้นสีส้มคือค่าเฉลี่ยผลต่างจาก 189 คู่
