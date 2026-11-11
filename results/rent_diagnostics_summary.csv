@@ -1,19 +1,19 @@
 diagnostic,value,unit,note
-Nonmissing rents observations (2000–2021),4535,country-years,Among the 217-unit analysis whitelist
+Nonmissing rents observations (1970–2021),9235,country-years,Among the 217 whitelisted countries/economies
 Units with rents observations,214,countries/economies,
 Minimum rents,0,% of GDP,No negative values found
 Maximum rents,88.5923456549581,% of GDP,"Equatorial Guinea, 2000"
 Negative rents values,0,country-years,
-Rents values above 100,0,country-years,The World Bank definition does not prescribe 0–100 range
-Rents values above 50,46,country-years,"Very high values; review, do not auto-delete"
-Global Tukey upper fence,19.973497509621637,% of GDP,Q1=0.1167588224911585; Q3=8.05945429734335; global fence is descriptive because countries differ
-Above global Tukey fence,471,country-years,Statistical flags are not proof of data error
-Within-country Tukey candidates,128,country-years,Country-specific Q3+1.5IQR; n≥8; 73 units flagged
-Total equals sum of five component rents,4190,country-years,Max absolute difference=1.2079226507921703e-13
-Adjacent complete year pairs (main paired sample),3848,transitions,Across 189 eligible units; not test N
-Same low/middle/high label,2270,transitions,58.99% of 3848
-Adjacent years both in low/high tails,2123,transitions,1882 same tail (88.65%); 241 direct low↔high switches
-Median absolute rents change between consecutive years,0.32329046187821153,percentage points,Main paired sample only
-95th percentile absolute rents change,7.115363662104279,percentage points,
-Absolute rents change >20 points,13,transitions,
-Absolute rents change >40 points,2,transitions,
+Rents values above 100,0,country-years,WDI definition does not prescribe a 0–100 range
+Rents values above 50,108,country-years,"Very high values; review, do not auto-delete"
+Global Tukey upper fence,20.79649040729138,% of GDP,Q1=0.19486046989594602; Q3=8.435512444854119; global fence is descriptive because countries differ
+Above global Tukey fence,930,country-years,Statistical flags are not proof of data error
+Within-country Tukey candidates,368,country-years,115 units flagged; country-specific Q3+1.5IQR; n≥8
+Total equals sum of five component rents (2000–2021 subset),4190,country-years,Max absolute difference=1.2079226507921703e-13; component check subset only
+Adjacent complete year pairs (main paired sample),8100,transitions,Across 189 eligible units; not test N
+Same low/middle/high label,5400,transitions,66.67% of adjacent pairs
+Adjacent years both in low/high tails,4351,transitions,4093 same tail (94.07%); 258 direct low↔high switches
+Median absolute rents change between consecutive years,0.36530483510065503,percentage points,Main paired sample only
+95th percentile absolute rents change,8.134857263827982,percentage points,Main paired sample only
+Absolute rents change >20 points,57,transitions,Main paired sample only
+Absolute rents change >40 points,5,transitions,Main paired sample only

@@ -18,7 +18,7 @@ from analysis import (
 
 ROOT = Path(__file__).resolve().parent
 COMPONENT_FILE = ROOT / "data" / "validation" / "rent_components_2000_2021.csv"
-MAIN_START, MAIN_END = 2000, 2021
+MAIN_START, MAIN_END = 1970, 2021
 MIN_YEARS_PER_GROUP = 3
 
 

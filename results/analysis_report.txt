@@ -1,0 +1,14 @@
+MATCHED-PAIRS MAIN ANALYSIS (1970–2021)
+
+Complete country-years: 9,021
+Units with both indicators: 212
+Paired units analyzed: 189
+Excluded: 5 units without joint data; 23 units with identical P33/P67 cutoffs.
+Mean growth low rents: 1.5188%
+Mean growth high rents: 2.4913%
+Mean paired difference (high minus low): 0.9725 percentage points
+95% CI: [0.4322, 1.5128]
+Paired t-test: t(188) = 3.5509, p = 0.000485
+Wilcoxon signed-rank: W = 6257, p = 0.000303
+
+Note: the paired tests use 189 country/economy-level differences, not 9,021 independent rows.

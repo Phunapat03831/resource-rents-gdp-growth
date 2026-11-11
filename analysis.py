@@ -1,7 +1,8 @@
-"""Compare the main matched-pairs window with the longest joint WDI overlap.
+"""Run the main matched-pairs analysis over the full observed joint-data window.
 
-The primary analysis remains 2000-2021. This script repeats the same
-country-level grouping for 2000-2021 and for the longest observed joint-data overlap (1970-2021). It reports the actual joint-data overlap separately.
+Both selected WDI indicators overlap in 1970-2021. This script uses that full
+window to maximize available country-year data for the within-economy means.
+The inferential sample remains one paired difference per eligible economy.
 """
 
 from __future__ import annotations
@@ -248,8 +249,7 @@ def analyze_window(
 def main() -> None:
     panel, whitelist_size = load_panel()
     periods = [
-        ("2000-2021 main", 2000, 2021),
-        ("1970-2021 longest joint-data overlap", 1970, 2021),
+        ("1970-2021 main", 1970, 2021),
     ]
     summaries = []
     country_results = []
@@ -263,9 +263,9 @@ def main() -> None:
     OUTPUT_DIR.mkdir(parents=True, exist_ok=True)
     summary_df = pd.DataFrame(summaries)
     country_df = pd.concat(country_results, ignore_index=True)
-    summary_path = OUTPUT_DIR / "period_comparison.csv"
+    summary_path = OUTPUT_DIR / "analysis_summary.csv"
     country_path = OUTPUT_DIR / "country_pairs.csv"
-    report_path = OUTPUT_DIR / "period_report.txt"
+    report_path = OUTPUT_DIR / "analysis_report.txt"
     summary_df.to_csv(summary_path, index=False, float_format="%.10g")
     country_df.to_csv(country_path, index=False, float_format="%.10g")
 
@@ -294,23 +294,22 @@ def main() -> None:
     plt.close(fig)
 
     lines = [
-        "MATCHED-PAIRS PERIOD SENSITIVITY CHECK",
+        "MATCHED-PAIRS MAIN ANALYSIS",
         "",
-        "Input: WDI export has year columns 1960-2025; both indicators overlap only in 1970-2021.",
+        "Input: WDI export has year columns 1960-2025; rents and GDP per capita growth overlap in 1970-2021.",
         "Variables: Total natural resources rents (% GDP) and GDP per capita growth (annual %).",
         f"Country/economy whitelist size: {whitelist_size}.",
-        f"Complete joint-data overlap in the file: {int(panel[YEAR].min())}-{int(panel[YEAR].max())}.",
+        f"Complete country-years used: {int(summary_df.iloc[0]['complete_country_years']):,}.",
         "",
-        "Method held constant: country-specific linear P33/P67 cutoffs; middle years omitted;",
+        "Method: country-specific linear P33/P67 cutoffs; middle observations omitted;",
         "at least 3 complete years in each rent group; one high-minus-low mean difference per unit.",
-        "Each unit has equal weight. The 1970-2021 window is the longest observed overlap with both indicators.",
+        "Each unit is equally weighted. The analysis uses the longest overlap with data for both indicators.",
         "",
     ]
     for row in summaries:
         lines.extend(
             [
                 row["analysis_window"],
-                f"- Complete country-years: {row['complete_country_years']:,}",
                 f"- Units with joint data: {row['units_with_joint_data']}",
                 f"- Paired units analyzed: {row['country_pairs']}",
                 f"- Units without joint data: {row['units_without_joint_data']}",
@@ -326,10 +325,10 @@ def main() -> None:
         )
     lines.extend(
         [
-            "Interpretation",
-            "The longer window adds country-year observations but the number of pairs remains 189. The pair membership overlaps by 188 units: Iceland appears only in the main window and New Caledonia only in the longer window. The windows overlap and are not independent replications. The test compares averages from different calendar years and does not control for year-specific shocks or other time-varying factors; results are associations, not causal effects.",
+            "How to read N",
+            "The file contains country-year observations used to classify rent periods and calculate means, but the paired tests use one difference per eligible country/economy. The inferential sample size is the number of pairs, not the number of country-year rows.",
             "",
-            "Missing values were not imputed. The requested 1970-2021 interval has no joint observations before the first observed overlap or after the final observed overlap.",
+            "Missing values were not imputed. The two rent-group averages generally come from different calendar years; the tests do not adjust for year-specific shocks or other time-varying factors. Results describe associations, not causal effects.",
         ]
     )
     report_path.write_text("\n".join(lines) + "\n", encoding="utf-8")
